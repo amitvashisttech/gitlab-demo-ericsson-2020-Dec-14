@@ -1,0 +1,331 @@
+    1  ip addr 
+    2  hostname
+    3  cat /etc/hosts
+    4  exit
+    5  ls
+    6  git --version 
+    7  git init --bare my-project.git
+    8  ls
+    9  cd my-project.git/
+   10  ls
+   11  cd ..
+   12  ls
+   13  rm -rf my-project.git/
+   14  ls
+   15  ls -a 
+   16  ls
+   17  mkdir myproject 
+   18  ls
+   19  cd myproject/
+   20  ls
+   21  ls -a 
+   22  git init 
+   23  ls -a 
+   24  cd .git/
+   25  ls
+   26  cd ..
+   27  ls
+   28  pwd
+   29  ls -a 
+   30  cd ..
+   31  ls
+   32  mkdir mysecondproject
+   33  ls
+   34  cd mysecondproject/
+   35  git init --bare my-project.git
+   36  ls -a 
+   37  cd my-project.git/
+   38  ls
+   39  ls -ltr ../../myproject/.git/
+   40  cd 
+   41  ls
+   42  cd myproject/
+   43  ls
+   44  ls -a 
+   45  git config --list 
+   46  echo "Welcome to Git Demo 1" > Hello_World.txt
+   47  ls
+   48  cat Hello_World.txt 
+   49  git status 
+   50  git add Hello_World.txt
+   51  git status 
+   52  git commit 
+   53  git status 
+   54  vi Hello_World.txt 
+   55  git status 
+   56  git add  Hello_World.txt; git commit -m "Demo2 Commit"
+   57  git status 
+   58  git logs
+   59  git log
+   60  git config --list 
+   61  git config --global --list 
+   62  git config --global user.name "Amit Vashist"
+   63  git config --global --list 
+   64  git config --global user.email "amitvashist7@outlook.com"
+   65  git config --global --list 
+   66  git config --global core.editor vi
+   67  git config --global help.autocorrect 1
+   68  git config --global --list 
+   69  cd 
+   70  ls
+   71  ls -a 
+   72  cat .gitconfig 
+   73  git config --global color.ui=auto
+   74  cd - 
+   75  ls
+   76  vi Hello_World.txt 
+   77  git status 
+   78  git add . 
+   79  git commit 
+   80  git log 
+   81  cd ..
+   82  ls
+   83  cp -rf myproject /tmp/
+   84  chmod 777 /tmp/myproject/
+   85  ls
+   86  exit
+   87  chmod -R 777 /tmp/myproject/
+   88  exit
+   89  ls
+   90  history 
+   91  ls
+   92  cd myproject/
+   93  ls
+   94  echo  "Apple Pie" | git hash-object --stdin
+   95  echo  "Amit Vashist" | git hash-object --stdin
+   96  echo  "Apple Pie" | git hash-object --stdin
+   97  echo  "Apple Pie" | git hash-object --stdin -w
+   98  echo  "Amit Vashist" | git hash-object --stdin -w
+   99  git cat-file c42fe628543c9f330ea51dea312d32cd72d7f454 
+  100  git cat-file c42fe628543c9f330ea51dea312d32cd72d7f454  -t 
+  101  git cat-file c42fe628543c9f330ea51dea312d32cd72d7f454  -s
+  102  git cat-file c42fe628543c9f330ea51dea312d32cd72d7f454  -p
+  103  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5  -p
+  104  ls
+  105  cd .git/
+  106  ls
+  107  cd objects/
+  108  ls
+  109  ls -ltr 23/991897e13e47ed0adb91a0082c31c82fe0cbe5 
+  110  apt-get install tree -y 
+  111  apt-get update ; apt-get install tree -y 
+  112  tree .
+  113  ls
+  114  cd ..
+  115  ls
+  116  cd ..
+  117  ls
+  118  git log
+  119  git diff ed22d8a..916d741
+  120  git diff ed22d8a..8e5c486a
+  121  ls
+  122  git log 
+  123  git show head
+  124  git show HEAD
+  125  ls
+  126  cat .git/HEAD 
+  127  cat .git/refs/heads/master 
+  128  git branch
+  129  git logs 
+  130  cat Hello_World.txt 
+  131  echo "Welcome to Git Demo 4"; git add . ; git commit -m "Demo 4"
+  132  echo "Welcome to Git Demo 4" >> Hello_World.txt; git add . ; git commit -m "Demo 4"
+  133  cat .git/refs/heads/master 
+  134  git log
+  135  git show HEAD
+  136  git diff HEAD~1
+  137  git diff HEAD~2
+  138  git diff HEAD~1
+  139  git diff HEAD~4
+  140  git diff HEAD~3
+  141  git diff HEAD~1..HEAD~3
+  142  ls
+  143  git branch 
+  144  git branch UAT
+  145  git branch Stage
+  146  git branch Production 
+  147  git branch 
+  148  git checkout UAT
+  149  git branch 
+  150  cat .git/HEAD 
+  151  echo  "Welcome to My UAT Branch" > UAT_File.txt ; git add . ; git commit -m "Hey UAT"
+  152  git log
+  153  ls
+  154  git checkout master 
+  155  git log
+  156  git checkout Stage
+  157  ls
+  158  git branch 
+  159  ls
+  160  echo  "Welcome to My Stage Branch" > Stage_File.txt ; git add . ; git commit -m "Hey Stage"
+  161  ls
+  162  git checkout Production
+  163  echo  "Welcome to My Prod Branch" > Prod_File.txt ; git add . ; git commit -m "Hey Prod"
+  164  git log 
+  165  history 
+  166  git log --graph 
+  167  git log 
+  168  ls
+  169  git branch 
+  170  git checkout Stage
+  171  ls
+  172  git merge UAT 
+  173  ls
+  174  git lovg 
+  175  ls
+  176  git checkout Production 
+  177  ls
+  178  git merge Stage 
+  179  ls
+  180  git logs 
+  181  git logs --graph 
+  182  git checkout master 
+  183  git log 
+  184  git logs --graph 
+  185  git merge Production 
+  186  git logs --graph 
+  187  git merge Production 
+  188  git log 
+  189  ls
+  190  git checkout Production 
+  191  ls
+  192  vim Hello_World.txt 
+  193  git add . ; git commit -m "Demo 7"
+  194  git logs 
+  195  git checkout master 
+  196  git merge Production 
+  197  git logs --graph 
+  198  ls
+  199  cat Hello_World.txt 
+  200  git checkout Production 
+  201  ls
+  202  vim Hello_World.txt 
+  203  git add . ; git commit -m "Demo 8"
+  204  git checkout master 
+  205  ls
+  206  cat Hello_World.txt 
+  207  vim Hello_World.txt 
+  208  git add . ; git commit -m "Demo 9"
+  209  ls
+  210  cat Hello_World.txt 
+  211  git merge Production 
+  212  vim Hello_World.txt 
+  213  git status 
+  214  git add . ; git commit -m "Conflict has been sorted"
+  215  git logs 
+  216  cd 
+  217  ls
+  218  git clone https://github.com/amitvashisttech/gitlab-demo-ericsson-2020-Dec-14.git
+  219  ls
+  220  cd gitlab-demo-ericsson-2020-Dec-14/
+  221  ls
+  222  ls -a 
+  223  cat .gitignore 
+  224  ls
+  225  git config --list 
+  226  cd ..
+  227  ls
+  228  cd myproject/
+  229  ls
+  230  git config --list 
+  231  git add remote --help
+  232  git add remote origin https://github.com/amitvashisttech/gitlab-demo-ericsson-2020-Dec-14.git
+  233  git remote add origin https://github.com/amitvashisttech/gitlab-demo-ericsson-2020-Dec-14.git
+  234  git config --list 
+  235  git pull 
+  236  ls
+  237  ls -a 
+  238  git push 
+  239  git push origin master
+  240  git checkout UAT
+  241  ls
+  242  git push origin UAT
+  243  ls -ltr /root/
+  244  ls -latr /root/
+  245  git config credential.helper store
+  246  ls -latr /root/
+  247  git push origin UAT
+  248  ls -latr /root/
+  249  git push origin Stage
+  250  git checkout Stage
+  251  git push origin Stage
+  252  git checkout Production 
+  253  ls
+  254  rm -rf Stage_File.txt UAT_File.txt Hello_World.txt 
+  255  ls
+  256  git add . ; git commit -m "Demo 11"
+  257  git push origin Production
+  258  exit
+  259  ls
+  260  cd my
+  261  cd myproject/
+  262  ls
+  263  vim Prod_File.txt 
+  264  ls
+  265  git pull 
+  266  git pull origin Production 
+  267  ls
+  268  cat Prod_File.txt 
+  269  vim Prod_File.txt 
+  270  sl
+  271  ls
+  272  git add . ; git commit -m "Demo 13"; git push origin Production 
+  273  git tag Prod_Release_v1.0
+  274  git logs 
+  275  ls
+  276  git tag
+  277  cd .git/
+  278  ls
+  279  cd refs/
+  280  ls
+  281  cd tags/
+  282  ls
+  283  cat Prod_Release_v1.0 
+  284  ls
+  285  cd ..
+  286  ls
+  287  cd ..
+  288  ls
+  289  cat refs/heads/Production 
+  290  cd ..
+  291  ls
+  292  git push tags 
+  293  git push tag
+  294  git push tag origin
+  295  git push tag orign Production 
+  296  git push tag
+  297  git push 
+  298  git push --set-upstream origin Production
+  299  git push tag
+  300  git push tags
+  301  git push tags -f 
+  302  git tags 
+  303  git tag
+  304  git push tag
+  305  git config --global push.default matching
+  306  git push tag
+  307  git push tags
+  308  git push --tags
+  309  ls
+  310  for i in {14..20}; echo "This is Demo $i" >> Prod_File.txt; git add . ; git commit -m "Demo $i";git push; done
+  311  for i in {14..20};do echo "This is Demo $i" >> Prod_File.txt; git add . ; git commit -m "Demo $i";git push; done
+  312  git log
+  313  cd .git/
+  314  cat refs/heads/Production
+  315  cd ..
+  316  ls
+  317  git log | more
+  318  ls
+  319  cat .git/refs/tags/Prod_Release_v1.0 
+  320  ls
+  321  git tag
+  322  git tag Prod_Release_v2.0
+  323  git push --tags
+  324  ls
+  325  cd ..
+  326  sl
+  327  cd - 
+  328  ls
+  329  git checkout master 
+  330  ls
+  331  history > Day1_History.txt
