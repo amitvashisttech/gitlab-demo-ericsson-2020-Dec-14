@@ -5,56 +5,6 @@
     5  docker run busybox echo "Welcome to the world of Docker Containers Test - 2 "
     6  history 
     7  history  >> myproject/02-Docker/Day2_History.txt
-    1  echo "***************************** Docker Demo 1 ****************************************"
-    2  docker images 
-    3  docker ps 
-    4  docker run busybox echo "Welcome to the world of Docker Containers."
-    5  docker run busybox echo "Welcome to the world of Docker Containers Test - 2 "
-    6  history 
-    7  history  >> myproject/02-Docker/Day2_History.txt
-    8  ls
-    9  cd myproject/
-   10  ls
-   11  cd 02-Docker/
-   12  ls
-   13  cd ..
-   14  ls
-   15  git add . ; git commit -m "Day2_History.txt"; git push 
-   16  git push origin master
-   17  
-   18  history 
-   19  echo "***************************** Docker Demo 2 ****************************************"
-   20  ls
-   21  docker images 
-   22  docker pull ubuntu
-   23  docker pull ubuntu:16.04
-   24  docker images 
-   25  docker pull amitvashist7/k8s-tiny-web
-   26  docker images 
-   27  docker pull amitvashist7/k8s-tiny-web:2
-   28  docker images 
-   29  docker pull amitvashist7/apache-ex4
-   30  docker login 
-   31  docker images 
-   32  docker pull amitvashist7/apache-ex4
-   33  docker pull httpd:alpine
-   34  docker images 
-   35  docker logout 
-   36  docker images 
-   37  docker rmi 5d592881faed
-   38  ls
-   39  docker search tomcat
-   40  docker pull tomcat
-   41  docker images 
-   42  ls
-   43  history >> 02-Docker/Day2_History.txt 
-    1  echo "***************************** Docker Demo 1 ****************************************"
-    2  docker images 
-    3  docker ps 
-    4  docker run busybox echo "Welcome to the world of Docker Containers."
-    5  docker run busybox echo "Welcome to the world of Docker Containers Test - 2 "
-    6  history 
-    7  history  >> myproject/02-Docker/Day2_History.txt
     8  ls
     9  cd myproject/
    10  ls
@@ -130,3 +80,43 @@
    80  history 
    81  ls
    82  history >> 02-Docker/Day2_History.txt 
+   83  git add . ; git commit -m "Docker Container History - 1.1"; git push origin master
+   84  history 
+   85  ls
+   86  docker run -it --name mywebapp ubuntu:16.04 
+   87  docker ps 
+   88  docker inspect mywebapp
+   89  curl localhost 
+   90  curl "172.17.0.9"
+   91  curl 172.17.0.9/info.html
+   92  docker container ls 
+   93  docker container ls -a
+   94  docker container ls -q
+   95  docker container ls -aq
+   96  docker container ls -l
+   97  docker ps -l
+   98  docker ps -ql
+   99  docker ps -qa
+  100  docker ps 
+  101  curl 172.17.0.9/info.html
+  102  docker attach dbf55ca86cf2
+  103  curl 172.17.0.9/info.html
+  104  docker kill dbf55ca86cf2
+  105  docker ps 
+  106  docker ps -a
+  107  docker start mywebapp
+  108  docker ps 
+  109  docker attach mywebapp
+  110  docker ps 
+  111  docker inspect dbf55ca86cf2
+  112  docker ps 
+  113  docker exec -it mywebapp ip addr 
+  114  curl 172.17.0.9
+  115  docker exec -it mywebapp apache2ctl start 
+  116  curl 172.17.0.9
+  117  curl 172.17.0.9/info.html
+  118  history 
+  119  ls
+  120  cd 02-Docker/
+  121  ls
+  122  history > Day2_History.txt 
