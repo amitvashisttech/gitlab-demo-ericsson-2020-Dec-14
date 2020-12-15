@@ -48,3 +48,85 @@
    41  docker images 
    42  ls
    43  history >> 02-Docker/Day2_History.txt 
+    1  echo "***************************** Docker Demo 1 ****************************************"
+    2  docker images 
+    3  docker ps 
+    4  docker run busybox echo "Welcome to the world of Docker Containers."
+    5  docker run busybox echo "Welcome to the world of Docker Containers Test - 2 "
+    6  history 
+    7  history  >> myproject/02-Docker/Day2_History.txt
+    8  ls
+    9  cd myproject/
+   10  ls
+   11  cd 02-Docker/
+   12  ls
+   13  cd ..
+   14  ls
+   15  git add . ; git commit -m "Day2_History.txt"; git push 
+   16  git push origin master
+   17  
+   18  history 
+   19  echo "***************************** Docker Demo 2 ****************************************"
+   20  ls
+   21  docker images 
+   22  docker pull ubuntu
+   23  docker pull ubuntu:16.04
+   24  docker images 
+   25  docker pull amitvashist7/k8s-tiny-web
+   26  docker images 
+   27  docker pull amitvashist7/k8s-tiny-web:2
+   28  docker images 
+   29  docker pull amitvashist7/apache-ex4
+   30  docker login 
+   31  docker images 
+   32  docker pull amitvashist7/apache-ex4
+   33  docker pull httpd:alpine
+   34  docker images 
+   35  docker logout 
+   36  docker images 
+   37  docker rmi 5d592881faed
+   38  ls
+   39  docker search tomcat
+   40  docker pull tomcat
+   41  docker images 
+   42  ls
+   43  history >> 02-Docker/Day2_History.txt 
+   44  ls
+   45  git add . ; git commit -m "Docker Image History"; git push origin master
+   46  echo "***************************** Docker Demo 3 ****************************************"
+   47  ls
+   48  docker images 
+   49  docker run ubuntu:16.04 echo "Hey Ubuntu"
+   50  docker ps 
+   51  docker ps -a
+   52  docker run -it ubuntu:16.04 
+   53  docker ps 
+   54  docker run -it ubuntu:16.04 
+   55  docker ps 
+   56  docker run -it ubuntu:16.04 
+   57  docker ps 
+   58  docker run -itd ubuntu:16.04 
+   59  docker ps 
+   60  docker run -itd --name test-demo-1 ubuntu:16.04 
+   61  docker ps 
+   62  docker run -itd --name webapp-cont-1 ubuntu:16.04 
+   63  docker run -itd --name webapp-cont-2 ubuntu:16.04 
+   64  docker ps 
+   65  docker run -itd --name webapp-cont-2 ubuntu:16.04 
+   66  docker stop webapp-cont-2
+   67  docker ps 
+   68  docker run -itd --name webapp-cont-2 ubuntu:16.04 
+   69  docker ps 
+   70  docker ps -a
+   71  docker start webapp-cont-2
+   72  docker ps 
+   73  ls
+   74  docker ps 
+   75  docker run -itd --name webapp-new-app-1 ubuntu:16.04 
+   76  docker stop webapp-cont-2
+   77  docker rename webapp-cont-2 webapp-cont-22
+   78  docker ps
+   79  docker ps -a 
+   80  history 
+   81  ls
+   82  history >> 02-Docker/Day2_History.txt 
