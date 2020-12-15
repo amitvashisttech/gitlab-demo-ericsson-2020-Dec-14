@@ -184,3 +184,149 @@
   184  cd ..
   185  ls
   186  history > Day2_History.txt 
+  187  ls
+  188  cd ..
+  189  ls
+  190  git add . ; git commit -m "Docker Images History"; git push origin master
+  191  ls
+  192  history 
+  193  echo "***************************** Docker Demo 5 ****************************************"
+  194  ls
+  195  docker volume ls 
+  196  docker volume create my-vol
+  197  docker volume ls 
+  198  cd /var/lib/docker/
+  199  ls
+  200  cd containers/
+  201  ls
+  202  docker ps 
+  203  docker ps -a
+  204  docker kill $(docker ps -aq)
+  205  docker rm $(docker ps -aq)
+  206  ls
+  207  cd ..
+  208  ls
+  209  cd image/
+  210  ls
+  211  cd overlay2/
+  212  ls
+  213  cd ..
+  214  ls
+  215  cd ..
+  216  ls
+  217  cd volumes/
+  218  ls
+  219  docker volume ls 
+  220  docker volume inspect my-vol
+  221  pwd
+  222  ls
+  223  docker run -d --name devtest --mount source=my-vol,target=/var/www/html/app mywebapp-dockerfile:v2
+  224  docker ps 
+  225  docker inspect devtest
+  226  ls
+  227  curl 172.17.0.2
+  228  curl 172.17.0.2/info.html
+  229  curl 172.17.0.2/app
+  230  docker inspect devtest
+  231  ls
+  232  cd my-vol/
+  233  ls
+  234  cd _data/
+  235  ls
+  236  echo  "Welcome to Docker Volume" > 1.html
+  237  ls
+  238  cd ..
+  239  curl 172.17.0.2/app
+  240  curl 172.17.0.2/app/1.html
+  241  date >> _data/2.html
+  242  hostname >> _data/2.html
+  243  curl 172.17.0.2/app/2.html
+  244  cd 
+  245  ls
+  246  cd - 
+  247  cd ..
+  248  ls
+  249  cd 
+  250  docker ps 
+  251  docker exec -it devtest ls -ltr /var/www/html
+  252  docker exec -it devtest ls -ltr /var/www/html/app
+  253  history >> /var/lib/docker/volumes/my-vol/_data/history
+  254  docker exec -it devtest ls -ltr /var/www/html/app
+  255  ls
+  256  docker run -it -v /var/amitvashist ubuntu:16.04
+  257  docker volumes ls 
+  258  docker volume ls 
+  259  docker volume inspect 5e0c76fc9ccf4da17a7fcc6c78f30795b0e4ef525d1e04659856842370167a00
+  260  cd /var/lib/docker/volumes/5e0c76fc9ccf4da17a7fcc6c78f30795b0e4ef525d1e04659856842370167a00/_data
+  261  ls
+  262  cat hello.txt 
+  263  cd 
+  264  ls
+  265  pwd
+  266  cd gitlab-demo-ericsson-2020-Dec-14/
+  267  ls
+  268  git pull 
+  269  ls
+  270  git branch 
+  271  git checkout master 
+  272  ls
+  273  pwd
+  274  docker run -it -v /root/gitlab-demo-ericsson-2020-Dec-14:/var/mygitdata ubuntu:16.04
+  275  ls
+  276  docker run -it -v /root/gitlab-demo-ericsson-2020-Dec-14:/var/mygitdata:ro ubuntu:16.04
+  277  ls
+  278  docker ps -qa 
+  279  docker kill $(docker ps -qa ) 
+  280  docker rm $(docker ps -qa ) 
+  281  docker ps -a 
+  282  ls
+  283  cat date_stamp.txt 
+  284  docker volume ls 
+  285  cd /var/lib/docker/volumes/my-vol/_data/
+  286  ll
+  287  cd ..
+  288  ls
+  289  cd ..
+  290  ls
+  291  cd 5e0c76fc9ccf4da17a7fcc6c78f30795b0e4ef525d1e04659856842370167a00/
+  292  ls
+  293  cd _data/
+  294  ls
+  295  cat hello.txt 
+  296  cd ..
+  297  ls
+  298  cd ..
+  299  ls
+  300  cd 
+  301  ls
+  302  docker run -itd --name datacontainer -v /var/lib/amit -v /var/log/vashist -v /var/www/html/demo ubuntu:16.04
+  303  docker ps 
+  304  docker inspect datacontainer
+  305  docker run -d --volume-from datacontainer --name webserver-01 mywebapp-dockerfile:v2
+  306  docker images 
+  307  docker ps 
+  308  docker run -d --volumes-from datacontainer --name webserver-02 mywebapp-dockerfile:v2
+  309  docker run -d --volumes-from datacontainer --name webserver-03 mywebapp-dockerfile:v2
+  310  docker run -d --volumes-from datacontainer --name webserver-04 mywebapp-dockerfile:v2
+  311  docker ps 
+  312  docker inspect webserver-04
+  313  docker inspect webserver-03
+  314  docker inspect webserver-02
+  315  ls
+  316  docker inspect webserver-02
+  317  curl 172.17.0.3
+  318  curl 172.17.0.3/demo
+  319  curl 172.17.0.4/demo
+  320  curl 172.17.0.5/demo
+  321  curl 172.17.0.6/demo
+  322  ls
+  323  docker ps 
+  324  docker attach abc25c01581c
+  325  ls
+  326  history 
+  327  ls
+  328  cd myproject/
+  329  ls
+  330  cd 02-Docker/
+  331  ls
+  332  history > Day2_History.txt 
