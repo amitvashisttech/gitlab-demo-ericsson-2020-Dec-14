@@ -1,0 +1,7 @@
+    1  echo "***************************** Docker Demo 1 ****************************************"
+    2  docker images 
+    3  docker ps 
+    4  docker run busybox echo "Welcome to the world of Docker Containers."
+    5  docker run busybox echo "Welcome to the world of Docker Containers Test - 2 "
+    6  history 
+    7  history  >> myproject/02-Docker/Day2_History.txt
