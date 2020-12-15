@@ -120,3 +120,67 @@
   120  cd 02-Docker/
   121  ls
   122  history > Day2_History.txt 
+  123  ls
+  124  cd ..
+  125  ls
+  126  git add . ; git commit -m "Docker Container History - 3.2"; git push origin master
+  127  cat /etc/apt/sources.list
+  128  docker images 
+  129  ls
+  130  docker ps 
+  131  docker commit -p -m "My First Apache Server" mywebapp mywebapp-image:v1
+  132  docker images 
+  133  docker run -itd mywebapp-image:v1
+  134  docker ps 
+  135  docker inspect 8afa118c8423
+  136  curl 172.17.0.11
+  137  docker ps 
+  138  docker attach mywebapp
+  139  docker commit -p -m "My First Apache Server" mywebapp mywebapp-image:v2
+  140  docker images 
+  141  docker run -itd --name test-webserver-1 mywebapp-image:v2
+  142  docker ps 
+  143  docker inspect test-webserver-1
+  144  curl 172.17.0.12
+  145  curl 172.17.0.12/info.html
+  146  docker run -itd --name test-webserver-2 mywebapp-image:v2
+  147  docker run -itd --name test-webserver-3 mywebapp-image:v2
+  148  curl 172.17.0.12/info.html
+  149  curl 172.17.0.13/info.html
+  150  curl 172.17.0.14/info.html
+  151  curl 172.17.0.15/info.html
+  152  ls
+  153  cd 02-Docker/
+  154  sl
+  155  ls
+  156  mkdir 01-Dockerfile/apache -p 
+  157  ls
+  158  cd 01-Dockerfile/apache/
+  159  ls
+  160  vim Dockerfile
+  161  ls
+  162  docker build -t mywebapp-dockerfile:v1 . 
+  163  vi Dockerfile 
+  164  docker build -t mywebapp-dockerfile:v1 . 
+  165  docker images 
+  166  docker run -d --name test-web-1 mywebapp-dockerfile:v1 
+  167  docker ps 
+  168  docker inspect test-web-1
+  169  curl "172.17.0.15"
+  170  ls
+  171  vim info.html
+  172  s
+  173  ls
+  174  vim Dockerfile 
+  175  docker build -t mywebapp-dockerfile:v2 . 
+  176  docker images 
+  177  docker run -d --name test-web-2 mywebapp-dockerfile:v2
+  178  curl "172.17.0.15"
+  179  curl 172.17.0.15/info.html
+  180  curl 172.17.0.16
+  181  curl 172.17.0.16/info.html
+  182  cd ..
+  183  ls
+  184  cd ..
+  185  ls
+  186  history > Day2_History.txt 
