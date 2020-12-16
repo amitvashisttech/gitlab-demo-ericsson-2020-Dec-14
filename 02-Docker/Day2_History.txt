@@ -330,3 +330,133 @@
   330  cd 02-Docker/
   331  ls
   332  history > Day2_History.txt 
+  333  ls
+  334  cd ..ls
+  335  cd ..
+  336  ls
+  337  git add . ; git commit -m "Docker Volumes History"; git push origin master
+  338  ls
+  339  history 
+  340  docker network ls 
+  341  docker network inspect 8de02be52be9
+  342  ls
+  343  docker ps 
+  344  docker kill $(docker ps -qa)
+  345  docker network inspect 8de02be52be9
+  346  docker ps 
+  347  docker ps -a
+  348  docker start webserver-04
+  349  docker network inspect 8de02be52be9
+  350  docker start webserver-02
+  351  docker network inspect 8de02be52be9
+  352  ip addr 
+  353  docker ps 
+  354  docker exec -it webserver-04 ip addr 
+  355  ip netns 
+  356  ln -s /var/run/docker/netns /var/run/network 
+  357  ip netns 
+  358  ln -s /var/run/docker/netns /var/run/network/
+  359  ls
+  360  cd /var/run/network/
+  361  ls
+  362  cd netns
+  363  ls
+  364  ll
+  365  cd ..
+  366  ls
+  367  rm netns
+  368  ls
+  369  cd ..
+  370  ls
+  371  cd 
+  372  ln -s /var/run/docker/netns /var/run/netns
+  373  ip netns 
+  374  ip addr 
+  375  ip netns 
+  376  ip netns exec 4d1f65a55935 ip addr 
+  377  ip netns exec 76e6d569a994 ip addr 
+  378  docker ps 
+  379  docker stop webserver-02 webserver-04
+  380  ip netns 
+  381  docker start webserver-02 webserver-04 webserver-03
+  382  ip netns 
+  383  ip addr 
+  384  ip netns 
+  385  ip netns exec a3fca8706266 ip addr 
+  386  docker ps 
+  387  docker exec -it webserver-03 ip addr 
+  388  ls
+  389  docker images 
+  390  docker ps
+  391  docker run -d --name test-none-1 --network none mywebapp-dockerfile:v2 
+  392  docker ps 
+  393  docker exec -it test-none-1 ip addr 
+  394  docker network ls 
+  395  docker run -d --name test-host-1 --network host mywebapp-dockerfile:v2 
+  396  docker ps 
+  397  docker exec -it test-host-1 ip addr 
+  398  docker network ls 
+  399  docker network create --help
+  400  docker network create -d bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.0.254 mybr0
+  401  docker network ls 
+  402  docker network inspect mybr0
+  403  docker run -d --name test-new-mybr0-nw-net-1 --network mybr0 mywebapp-dockerfile:v2 
+  404  docker run -d --name test-new-mybr0-nw-net-2 --network mybr0 mywebapp-dockerfile:v2 
+  405  docker network inspect mybr0
+  406  docker ps 
+  407  docker exec -it test-new-mybr0-nw-net-1 ip addr 
+  408  docker exec -it test-new-mybr0-nw-net-2 ip addr 
+  409  ping 172.28.5.1
+  410  ping 172.28.5.0
+  411  curl 172.28.5.1
+  412  curl 172.28.5.1/info.html
+  413  curl 172.28.5.0/info.html
+  414  ls
+  415  docker ps 
+  416  curl 172.28.5.1/info.html
+  417  curl localhost
+  418  docker ps 
+  419  docker kill test-host-1
+  420  curl localhost
+  421  netstat -tulnp 
+  422  docker run -d -p 80:80 --name webapp-public-1 mywebapp-dockerfile:v2 
+  423  docker ps 
+  424  netstat -tulnp 
+  425  iptables -L
+  426  systemctl status docker 
+  427  curl localhost
+  428  curl localhost/info.html
+  429  ip addr 
+  430  docker run -d -p 8080:80 --name webapp-public-2 mywebapp-dockerfile:v2 
+  431  docker ps 
+  432  systemctl status docker 
+  433  docker run -d -p 8080:80 --name webapp-public-3 mywebapp-dockerfile:v2 
+  434  docker run -d -p 8081:80 --name webapp-public-4 mywebapp-dockerfile:v2 
+  435  docker ps 
+  436  ls
+  437  cd myproject/
+  438  ls
+  439  cd 02-Docker/
+  440  ls
+  441  cd 01-Dockerfile/
+  442  ls
+  443  cd apache/
+  444  docker run -d -P --name webapp-public-5 mywebapp-dockerfile:v2 
+  445  docker ps 
+  446  vim Dockerfile 
+  447  docker build -t mywebapp-dockerfile:v3 .
+  448  docker run -d -P --name webapp-public-6 mywebapp-dockerfile:v3
+  449  docker ps 
+  450  ls
+  451  vim Dockerfile 
+  452  ls
+  453  vim info.html 
+  454  docker build -t mywebapp-dockerfile:v4 .
+  455  docker run -d -P --name webapp-public-7 mywebapp-dockerfile:v4
+  456  docker ps 
+  457  telnet localhost 49155
+  458  telnet localhost 49154
+  459  ls
+  460  cd ..
+  461  ls
+  462  history > Day2_History.txt 
