@@ -1,0 +1,34 @@
+    1  ls
+    2  echo "**************************** Git Lab Runner ********************************"
+    3  wget   wget https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+    4  echo "**************************** Git Lab Runner ********************************"
+    5  wget https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+    6  ls
+    7  du -sh * 
+    8  md5sum gitlab-runner_amd64.deb.1
+    9  ls
+   10  rm -rf gitlab-runner_amd64.deb
+   11  ls
+   12  mv gitlab-runner_amd64.deb.1 gitlab-runner_amd64.deb
+   13  ls
+   14  dpkg -i gitlab-runner_amd64.deb 
+   15  gitlab-runner --version
+   16  gitlab-runner status 
+   17  gitlab-runner stop 
+   18  gitlab-runner --help
+   19  gitlab-runner list 
+   20  gitlab-runner register
+   21  gitlab-runner status 
+   22  gitlab-runner start
+   23  gitlab-runner status 
+   24  grep -i runner /etc/passwd
+   25  history 
+   26  ls
+   27  cd myproject/
+   28  ;s
+   29  ls
+   30  mkdir 03-GitLab
+   31  ls
+   32  cd 03-GitLab/
+   33  ls
+   34  history > Day3_history.txt
