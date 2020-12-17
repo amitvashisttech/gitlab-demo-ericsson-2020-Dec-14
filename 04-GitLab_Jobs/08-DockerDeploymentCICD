@@ -1,0 +1,31 @@
+# In order to complete this demo please follow the below steps
+# Step 1: Create a Dockerfile dir in which copy your old apache code from Docker demo.
+# Step 2: User gitlab-runner don't have a privillages to excute docker commands.
+# Step 2.1: Update the /etc/sudoers with below entiry: gitlab-runner ALL=(ALL:ALL) NOPASSWD:ALL
+# Step 3: Update your gitlab-ci as we have shared over GitHub as Job 8
+
+variables:
+  TEST_NAME: gitlabcicidemo-apache-app:$CI_COMMIT_REF_NAME
+
+
+stages:
+  - build
+  - deploy
+
+
+build_project_docker:
+  stage: build
+  script:
+    -  cd 02-Docker/01-Dockerfile/apache/
+    -  sudo docker build -t $TEST_NAME .
+  tags:
+    - ci  
+
+deploy_project_docker:
+  stage: deploy
+  script:
+    -  sudo docker kill $(sudo docker ps -q)
+    -  sudo docker rm $(sudo docker ps -qa)
+    -  sudo docker run -d -p 8080:80 --name gitlabcicidemo-apache-app $TEST_NAME
+  tags:
+    - ci  
