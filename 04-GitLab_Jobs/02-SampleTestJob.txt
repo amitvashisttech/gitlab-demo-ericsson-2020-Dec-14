@@ -1,0 +1,7 @@
+demo_job_1:
+  script:
+    - echo "Welcome to the world of GitLab CICD Test 2" > /tmp/Hello_CICD.txt
+    - date > /tmp/Hello_CICD.txt
+    - grep -i "AmitVashist" Hello.html
+  tags:
+    - ci 
