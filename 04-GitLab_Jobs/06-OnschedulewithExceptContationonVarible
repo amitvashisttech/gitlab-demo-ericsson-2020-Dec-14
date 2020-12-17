@@ -1,0 +1,11 @@
+demo_job_1:on-schedule:
+  only:
+    - schedules
+  except:
+    variables:
+      - $test == "false" 
+  script:
+    - echo "Welcome to the world of GitLab CICD Test 7" >> /tmp/Hello_CICD.txt
+    - date >> /tmp/Hello_CICD.txt
+  tags:
+    - ci 
