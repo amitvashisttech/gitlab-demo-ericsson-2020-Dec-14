@@ -1,0 +1,19 @@
+stages:
+  - build
+  - test
+
+
+build_project:
+  stage: build
+  script:
+    - echo "Welcome to the world of GitLab CICD Test 2" > /tmp/Hello_CICD.txt
+    - date > /tmp/Hello_CICD.txt
+  tags:
+    - ci 
+
+test_project:
+  stage: test
+  script:
+    - grep -i "AmitVashist" Hello.html
+  tags:
+    - ci
