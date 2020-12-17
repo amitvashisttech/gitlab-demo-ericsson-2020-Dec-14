@@ -1,0 +1,8 @@
+demo_job_1:on-schedule:
+  only:
+    - schedules
+  script:
+    - echo "Welcome to the world of GitLab CICD Test 5" >> /tmp/Hello_CICD.txt
+    - date >> /tmp/Hello_CICD.txt
+  tags:
+    - ci 
