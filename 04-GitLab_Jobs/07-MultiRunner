@@ -1,0 +1,47 @@
+stages:
+  - build
+  - test
+  - deploy
+
+image: alpine
+
+build_project_red:
+  stage: build
+  script:
+    - echo "Welcome to the Project Red - Build Stage" >> /tmp/red_project
+
+test_project_red:
+  stage: test
+  script:
+    - echo "Welcome to the Project Red - Test Stage" >> /tmp/red_project
+
+deploy_project_red:
+  stage: deploy
+  script:
+    - echo "Welcome to the Project Red - Deploy Stage" >> /tmp/red_project
+
+
+build_project_green:
+  stage: build
+  script:
+    - echo "Welcome to the Project green - Build Stage" >> /tmp/green_project
+  tags:
+    - ci
+  
+  
+test_project_green:
+  stage: test
+  script:
+    - echo "Welcome to the Project green - Test Stage" >> /tmp/green_project
+  tags:
+    - ci
+
+
+deploy_project_green:
+  stage: deploy
+  script:
+    - echo "Welcome to the Project green - Deploy Stage" >> /tmp/green_project
+  tags:
+    - ci
+
+
